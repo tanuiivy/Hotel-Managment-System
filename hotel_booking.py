@@ -31,6 +31,28 @@ class Room:
                 f"Price: ${self.price}, Check-in: {self.check_in_date}, "
                 f"Check-out: {self.check_out_date}, Status: {availability}")
     
+#creating subclass to class room for rooms under repair
+class RoomsUnderRepair(Room):
+    def __init__(self,room_type,room_number,package_type, price, repair_status):
+      super().__init__(room_type, room_number, package_type, price)
+      self.repair_status = repair_status  # Status on how the repair is going 
+
+     def start_repair(self):
+        self.repair_status = "In Repair"
+        self.is_available = False
+        print(f"Room {self.room_number} is now under repair.")
+
+    def complete_repair(self):
+        self.repair_status = "Repair Complete"
+        self.is_available = True
+        print(f"Room {self.room_number} has completed repairs and is now available.")  
+
+    def __str__(self):
+        availability = "Available" if self.is_available else "Not Available"
+        return (f"Room {self.room_number}: {self.room_type}, Package: {self.package_type}, "
+                f"Price: ${self.price}, Repair Status: {self.repair_status}, "
+                f"Check-in: {self.check_in_date}, Check-out: {self.check_out_date}, Status: {availability}")
+
 #creating Guest class
 class Guest:
     #constructor
@@ -62,4 +84,25 @@ class Guest:
     def __str__(self):
         return f"Guest Name: {self.name}, Contact: {self.contact_number}, Rooms Booked: {[room.room_number for room in self.booked_rooms]}"
 
+   
+#creating Staff class
+class Staff:
+    def __init__(self,name,staff_id,gender):
+        #making the attributes private
+        self.__name=name
+        self.__staff_id=staff_id
+        self__.gender=gender
+
+    #accessor methods
+    def get_name(self):
+        return self.__name
+
+    def get_staff_id(self):
+        return self.__staff_id
+
+    def get_gender(self):
+        return self.__gender
+ 
+    def __str__(self):
+        return f"Staff Name: {self.__name}, Staff ID: {self.__staff_id}, Gender: {self.__gender}"
   
