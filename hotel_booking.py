@@ -37,10 +37,11 @@ class RoomsUnderRepair(Room):
       super().__init__(room_type, room_number, package_type, price)
       self.repair_status = repair_status  # Status on how the repair is going 
 
-     def start_repair(self):
+    def start_repair(self):
         self.repair_status = "In Repair"
         self.is_available = False
         print(f"Room {self.room_number} is now under repair.")
+
 
     def complete_repair(self):
         self.repair_status = "Repair Complete"
@@ -91,7 +92,7 @@ class Staff:
         #making the attributes private
         self.__name=name
         self.__staff_id=staff_id
-        self__.gender=gender
+        self.__gender=gender
 
     #accessor methods
     def get_name(self):
@@ -106,3 +107,19 @@ class Staff:
     def __str__(self):
         return f"Staff Name: {self.__name}, Staff ID: {self.__staff_id}, Gender: {self.__gender}"
   
+
+
+#Interning staff class which is a subclass to the staff class
+class InterningStaff(Staff):
+    def __init__(self,name,staff_id,gender,mentor,internship_duration):
+        #using the super key word to inherit the attributes of the staff class
+        super().__init__(name,staff_id,gender)
+        self.mentor=mentor
+        self.internship_duration=internship_duration
+
+    def __str__(self):
+        return (super().__str__() +
+            f", Mentor: {self.mentor}, Internship duration: {self.internship_duration} months")
+#intern=InterningStaff("Ivy Tanui","9087","Female","Chef Harrison",6)
+#print(intern)            
+            
