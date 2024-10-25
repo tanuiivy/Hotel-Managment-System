@@ -1,7 +1,9 @@
 # main.py
 
 import datetime
-from hotel_booking import Room, Guest, Reservation  # Import classes from hotel_booking.py
+from room import Room
+from guests import Guest
+
 
 # Main Program
 def main():
