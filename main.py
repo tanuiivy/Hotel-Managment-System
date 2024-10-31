@@ -4,7 +4,9 @@ from guests import Guest  # Importing the Guest class from guests module
 from staff import Staff  # Importing the Staff class (if needed in the future)
 from reservation import Reservation  # Importing the Reservation class (if needed in the future)
 from room import Room  # Importing the Room class
-
+'''
+this main.py allows for interactivity: allowing for input
+'''
 # Sample room data for demonstration
 rooms = [
     Room("Deluxe", "101", "Standard", 200),

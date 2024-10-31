@@ -1,5 +1,10 @@
 #since Rooms under repair is a child of Room class we have to import the Parent class so as to inherit the attributes
 from room import Room
+'''
+     This is the rooms under repair a child class for the rooms class
+     It hold information in regard to the rooms that are being repaired 
+     while still inheriting the attributes of it Parent class(room): this is evident using the super key word
+'''
 
 #creating subclass to class room for rooms under repair
 class RoomsUnderRepair(Room):
